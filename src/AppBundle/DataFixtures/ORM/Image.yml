@@ -1,0 +1,7 @@
+AppBundle\Entity\Gallery\Image:
+    image_{1..5}:
+        imagePath: <imageUrl()>
+        album: @album_1
+    image_{6..90}:
+        imagePath: <imageUrl()>
+        album: @album_<numberBetween(2, 5)>

@@ -1,0 +1,110 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//@import "compass/reset";
+
+@import "compass";
+
+// variables:
+$navbar_text_color: #FFF;
+$breadcrumb_background: #FFF;
+$link_hover_color: #FFF;
+$navbar_text_hover_color: #ECF0F1;
+$navbar_background_color: #2980B9;
+$link_hover_background: #4AA3DF;
+
+//----------------------------------------------
+.cf:before,
+.cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+@mixin hover_enlarge($scale_size) {
+	-webkit-transform: scale($scale_size);
+	-moz-transform: scale($scale_size);
+	-o-transform: scale($scale_size);
+	-ms-transform: scale($scale_size);	
+}
+
+body {
+	padding-top: 70px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.navbar {
+	background-color: $navbar_background_color;
+}
+
+.navbar-default .navbar-brand {
+	color: $navbar_text_color;
+	&:hover {
+		color: $navbar_text_hover_color;
+	}
+}
+
+.list-group {
+	max-width: 300px;
+	.list-group-item {
+		border: 0px;
+	}
+}
+
+.breadcrumb {
+	background-color: $breadcrumb_background;
+	padding: 8px 4px;
+	a {
+		padding: 5px;
+		&:hover {
+			background: $link_hover_background;
+			color: $link_hover_color;
+		}
+	}
+}
+
+.thumbnail {
+	border-radius: 0px;
+	border: 0px;
+	&:hover {
+		background: $link_hover_background;
+	}
+}
+
+.pagination {
+	display: table;
+	margin: 30px auto 0;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span,
+.list-group-item:last-child {
+	border-bottom-left-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span,
+.list-group-item:first-child{
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.pagination > li > a, .pagination > li > span {
+	border: 0px;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+	background-color: $link_hover_background;
+	color: $link_hover_color;
+}

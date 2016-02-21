@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Gallery</a>
+            </div>
+        </div>
+    </nav>
+    <br />
+    <div class="container" id="app-container">
+        <div id="main-region">
+            <p>Loading...</p>
+        </div>
+    </div>
+    <br />
+    <script type="text/template" id="album-list-layout">
+        <ol class="breadcrumb">
+            <li><a href="#">Albums</a></li>
+        </ol>
+        <div id="albums-region"></div>
+    </script>
+    <script type="text/template" id="album-list-item">
+        <a href="#" class="show_album">
+            <button type="button" class="list-group-item"><%- title %></button>
+        </a>
+    </script>
+    <script type="text/template" id="album-show-layout">
+        <ol class="breadcrumb">
+            <li><a href="#">Albums</a></li>
+            <li class="active"><%- album.title %></li>
+        </ol>
+        <div id="images-region"></div>
+        <div id="pagination-region"></div>
+    </script>
+    <script type="text/template" id="album-show-item">
+        <a href="<%- image_path %>" class="thumbnail swipebox">
+            <img alt="" src="<%- image_path %>" class="img-responsive">
+        </a>
+    </script>
+    <script type="text/template" id="album-show-pagination">
+        <ul class="pagination" data-album="<%- album.id %>">
+            <% if (pagination.current != 1) { %>
+            <li data-page="<%- pagination.previous %>">
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <% } %>
+            <% for (key in pagination.pagesInRange) { %>
+            <li data-page="<%- pagination.pagesInRange[key] %>"><a href="#"><%- pagination.pagesInRange[key] %></a></li>
+            <% } %>
+            <% if (pagination.current != pagination.last) { %>
+            <li data-page="<%- pagination.next %>">
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </script>
+    <script type="text/template" id="loading-view">
+        <h1>Loading Data</h1>
+        <p>Please wait, data is loading.</p>
+        <div id="spinner"></div>
+    </script>
+    <script type="text/template" id="notfound-view">
+        <h1>Not Found</h1>
+        <p>Oops...</p>
+    </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Image preview</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imagepreview" style="width: 400px; height: 264px;" >
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

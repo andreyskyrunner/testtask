@@ -1,0 +1,30 @@
+hautelook_alice:
+    locale: en_US
+    seed: 1
+
+jms_di_extra:
+    locations:
+        all_bundles: false
+        bundles: [AppBundle]
+        directories: ["%kernel.root_dir%/../src"]
+
+fos_rest:
+    view:
+        view_response_listener: true
+        templating_formats:
+            html: false
+        force_redirects:
+            html: false
+        failed_validation: HTTP_BAD_REQUEST
+    format_listener: ~
+    exception:
+        codes:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
+            'Doctrine\ORM\OptimisticLockException': HTTP_CONFLICT
+        messages:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': true
+    serializer:
+        serialize_null:       true
+    routing_loader:
+        default_format: json
+    param_fetcher_listener: true

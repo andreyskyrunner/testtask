@@ -1,0 +1,108 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 19, ../../sass/screen.scss */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+/* line 25, ../../sass/screen.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 36, ../../sass/screen.scss */
+body {
+  padding-top: 70px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 44, ../../sass/screen.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 48, ../../sass/screen.scss */
+.navbar {
+  background-color: #2980B9;
+}
+
+/* line 52, ../../sass/screen.scss */
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+/* line 54, ../../sass/screen.scss */
+.navbar-default .navbar-brand:hover {
+  color: #ECF0F1;
+}
+
+/* line 59, ../../sass/screen.scss */
+.list-group {
+  max-width: 300px;
+}
+/* line 61, ../../sass/screen.scss */
+.list-group .list-group-item {
+  border: 0px;
+}
+
+/* line 66, ../../sass/screen.scss */
+.breadcrumb {
+  background-color: #FFF;
+  padding: 8px 4px;
+}
+/* line 69, ../../sass/screen.scss */
+.breadcrumb a {
+  padding: 5px;
+}
+/* line 71, ../../sass/screen.scss */
+.breadcrumb a:hover {
+  background: #4AA3DF;
+  color: #FFF;
+}
+
+/* line 78, ../../sass/screen.scss */
+.thumbnail {
+  border-radius: 0px;
+  border: 0px;
+}
+/* line 81, ../../sass/screen.scss */
+.thumbnail:hover {
+  background: #4AA3DF;
+}
+
+/* line 86, ../../sass/screen.scss */
+.pagination {
+  display: table;
+  margin: 30px auto 0;
+}
+
+/* line 91, ../../sass/screen.scss */
+.pagination > li:first-child > a, .pagination > li:first-child > span,
+.list-group-item:last-child {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+/* line 97, ../../sass/screen.scss */
+.pagination > li:last-child > a, .pagination > li:last-child > span,
+.list-group-item:first-child {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+/* line 103, ../../sass/screen.scss */
+.pagination > li > a, .pagination > li > span {
+  border: 0px;
+}
+
+/* line 107, ../../sass/screen.scss */
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+  background-color: #4AA3DF;
+  color: #FFF;
+}
